@@ -1,4 +1,5 @@
 const { checkNumber } = require("../src/main");
+const { sayHello } = require("../src/main");
 
 describe("checkNumber function", () => {
   
@@ -17,4 +18,13 @@ describe("checkNumber function", () => {
     expect(result).toBe(0);
   });
 
+});
+
+
+describe("sayHello function", () => {
+  test("returns a greeting message with the provided name", () => {
+    const result = sayHello("Alice");
+    //Assertion
+    expect(result).toContain("Alice");
+  });
 });
