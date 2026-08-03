@@ -5,8 +5,12 @@ function checkNumber(num) {
 function sayHello(name) {
     return `Hello, ${name} how are you?`;
 }
+function getNames(){
+    return ["Alice", "Bob", "Charlie"];
+}
 
 module.exports={
     checkNumber,
-    sayHello
+    sayHello,
+    getNames
 }

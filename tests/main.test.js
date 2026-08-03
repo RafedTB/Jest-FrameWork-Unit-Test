@@ -1,6 +1,4 @@
-const { checkNumber } = require("../src/main");
-const { sayHello } = require("../src/main");
-
+const { checkNumber,sayHello,getNames } = require("../src/main");
 describe("checkNumber function", () => {
   
   test("returns the number if it is positive", () => {
@@ -20,7 +18,6 @@ describe("checkNumber function", () => {
 
 });
 
-
 describe("sayHello function", () => {
   test("returns a greeting message with the provided name", () => {
     const result = sayHello("Alice");
@@ -28,3 +25,13 @@ describe("sayHello function", () => {
     expect(result).toContain("Alice");
   });
 });
+
+describe("getNames function", () => {
+  test("returns an array of names", () => {
+    const result = getNames();
+    expect(result).toEqual(expect.arrayContaining(["Alice", "Bob", "Charlie"]));
+    expect(result).toHaveLength(3);
+    expect(result).toBeDefined();
+    expect(result).not.toBeNull();
+  });
+})
