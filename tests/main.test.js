@@ -1,4 +1,4 @@
-const { checkNumber,sayHello,getNames } = require("../src/main");
+const { checkNumber,sayHello,getNames,getUser } = require("../src/main");
 describe("checkNumber function", () => {
   
   test("returns the number if it is positive", () => {
@@ -33,5 +33,13 @@ describe("getNames function", () => {
     expect(result).toHaveLength(3);
     expect(result).toBeDefined();
     expect(result).not.toBeNull();
+  });
+})
+
+describe("getUser function", () => {
+  test("returns an object with the provided userId and username", () => {
+    const result = getUser(1, "John");
+    expect(result).toEqual({ id: 1, name: "John", role: "user" });
+
   });
 })
